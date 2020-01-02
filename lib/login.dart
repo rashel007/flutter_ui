@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'stacked_icons.dart';
+import 'home.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -52,18 +53,24 @@ class LoginPage extends StatelessWidget {
                   Expanded(
                     child: Padding(
                       padding: EdgeInsets.all(20.0),
-                      child: Container(
-                        alignment: Alignment.center,
-                        height: 70.0,
-                        decoration: BoxDecoration(
-                          color: Color(0xFF18D191),
-                          borderRadius: BorderRadius.circular(10.0),
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+                        },
+                        child:  Container(
+                          alignment: Alignment.center,
+                          height: 70.0,
+                          decoration: BoxDecoration(
+                            color: Color(0xFF18D191),
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: Text(
+                            "Login",
+                            style: TextStyle(color: Colors.white, fontSize: 18),
+                          ),
                         ),
-                        child: Text(
-                          "Login",
-                          style: TextStyle(color: Colors.white, fontSize: 18),
-                        ),
-                      ),
+                      )
+                     ,
                     ),
                   ),
                   Expanded(
